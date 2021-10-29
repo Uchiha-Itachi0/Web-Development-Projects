@@ -155,7 +155,7 @@ nav .nav-container .nav-links.active {
 }
 
 .home-container {
-  height: 100vh;
+  height: 800px;
   position: relative;
   display: flex;
   justify-content: center;
