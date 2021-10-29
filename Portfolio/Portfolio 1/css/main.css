@@ -170,6 +170,9 @@ nav .nav-container .nav-links.active {
   top: 0;
   border-radius: 30px;
 }
+.home-container .img-container canvas {
+  border-radius: 30px;
+}
 .home-container .circular-text {
   position: absolute;
   right: 10%;
@@ -205,6 +208,7 @@ nav .nav-container .nav-links.active {
   position: absolute;
   text-align: center;
   margin-top: 15rem;
+  pointer-events: none;
 }
 .home-container .home-heading h1 {
   font-size: 15vw;
@@ -268,6 +272,107 @@ nav .nav-container .nav-links.active {
   line-height: 2em;
 }
 
+.interest-section {
+  margin-top: 5em;
+  padding: 4rem 2.5rem;
+  background-color: #FFF6E6;
+  color: #324235;
+}
+.interest-section .interest-heading h1 {
+  font-size: max(6vw, 3rem);
+}
+.interest-section .interest-cards {
+  margin-top: 7em;
+  display: flex;
+  justify-content: space-evenly;
+}
+.interest-section .interest-cards .interest-card {
+  width: max(20vw, 200px);
+  height: max(30vw, 300px);
+  border: 2px solid #324235;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.interest-section .interest-cards .interest-card .interest-dsc {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF6E6;
+  left: -100%;
+  transition: 0.3s;
+  z-index: 1;
+  padding: 1em 0.5em;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.interest-section .interest-cards .interest-card .interest-dsc p {
+  font-size: max(2vw, 1.3em);
+}
+.interest-section .interest-cards .interest-card .interest-img {
+  border-radius: 50%;
+  width: max(10vw, 100px);
+  height: max(10vw, 100px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.interest-section .interest-cards .interest-card .interest-img .icon {
+  font-size: max(5vw, 3em);
+}
+.interest-section .interest-cards .interest-card .interest-img .interest-img-ring {
+  position: absolute;
+  border: 2px solid #324235;
+  border-radius: 50%;
+  top: min(-0.3vw, -4px);
+  left: min(-0.3vw, -4px);
+  right: min(-0.3vw, -4px);
+  bottom: min(-0.3vw, -4px);
+  transition: 0.5s;
+  transition-delay: 0.3s;
+}
+.interest-section .interest-cards .interest-card .interest-img .interest-img-ring::before {
+  content: "";
+  position: absolute;
+  width: max(1vw, 15px);
+  height: max(1vw, 15px);
+  background-color: #324235;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  right: 0px;
+  top: 20%;
+}
+.interest-section .interest-cards .interest-card:hover .interest-dsc {
+  left: 0;
+  transition-delay: 0.5s;
+}
+.interest-section .interest-cards .interest-card:hover .interest-img-ring {
+  transform: rotate(160deg);
+  transition-delay: 0s;
+}
+.interest-section .interest-cards .interest-card .interest-msg {
+  text-align: center;
+}
+.interest-section .interest-cards .interest-card .interest-msg h3 {
+  font-size: max(3vw, 2em);
+}
+.interest-section .interest-cards .interest-card .interest-msg .long {
+  font-size: max(1.8vw, 1.5em);
+}
+.interest-section .interest-cards .interest-card .interest-msg p {
+  font-size: max(2vw, 1.4em);
+}
+
+@media screen and (min-width: 2124px) {
+  .home-container {
+    height: 100vh;
+  }
+}
 @media screen and (max-width: 854px) {
   .home-container {
     overflow: hidden;
@@ -305,6 +410,13 @@ nav .nav-container .nav-links.active {
   .about-section .about-dsc p {
     font-size: 20px;
   }
+
+  .interest-section .interest-cards {
+    margin-top: 3em;
+  }
+  .interest-section .interest-cards .interest-card .interest-img .interest-img-ring::before {
+    right: -5%;
+  }
 }
 @media screen and (max-width: 690px) {
   nav .nav-container .nav-links ul li .moving-text span {
@@ -313,6 +425,12 @@ nav .nav-container .nav-links.active {
 
   .home-container .typing-text {
     right: 15%;
+  }
+
+  .interest-section .interest-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
 @media screen and (max-width: 550px) {
