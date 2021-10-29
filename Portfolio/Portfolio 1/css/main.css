@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #FFF6E6;
+}
+
+nav {
+  padding: 1.5rem 2.5rem;
+}
+nav .toggle {
+  position: absolute;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  right: 50px;
+  cursor: pointer;
+  opacity: 1;
+}
+nav .toggle span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #324235;
+  transition: 0.5s;
+}
+nav .toggle span:nth-child(2) {
+  top: 20px;
+}
+nav .toggle span:nth-child(3) {
+  top: 40px;
+}
+nav .toggle.active span:nth-child(1) {
+  transform: rotate(145deg) translate(13px, -17px);
+}
+nav .toggle.active span:nth-child(2) {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+nav .toggle.active span:nth-child(3) {
+  transform: rotate(-145deg) translate(10px, 16px);
+}
+nav .nav-container {
+  display: flex;
+}
+nav .nav-container .nav-logo {
+  flex-grow: 1;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #324235;
+}
+nav .nav-container .nav-logo span {
+  letter-spacing: -8px;
+}
+nav .nav-container .nav-links {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF6E6;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: 0.5s;
+  top: -100%;
+  overflow-x: hidden;
+}
+nav .nav-container .nav-links ul {
+  text-align: center;
+  width: 100%;
+}
+nav .nav-container .nav-links ul li {
+  position: relative;
+  width: inherit;
+}
+nav .nav-container .nav-links ul li .moving-text {
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: max(5vw, 3rem);
+  pointer-events: none;
+  z-index: 1;
+  height: 0;
+  transition: 0.5s;
+  color: #FFF6E6;
+}
+nav .nav-container .nav-links ul li .moving-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: travel 14s linear infinite;
+}
+nav .nav-container .nav-links ul li .moving-text-2 span {
+  animation-delay: 7s;
+}
+@keyframes travel {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+nav .nav-container .nav-links ul li:hover .moving-text {
+  height: 100%;
+}
+nav .nav-container .nav-links ul li a {
+  color: #324235;
+  font-size: max(5vw, 3rem);
+  width: inherit;
+  display: block;
+  border-top: 2px solid #324235;
+}
+nav .nav-container .nav-links ul li a.contact {
+  border-bottom: 2px solid #324235;
+}
+nav .nav-container .nav-links ul li a::before {
+  content: "";
+  position: absolute;
+  background-color: #324235;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  transition: 0.5s;
+  height: 0;
+  pointer-events: none;
+}
+nav .nav-container .nav-links ul li a:hover::before {
+  height: 100%;
+}
+nav .nav-container .nav-links.active {
+  top: 0;
+}
+
+.home-container {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.home-container .img-container {
+  width: 15vw;
+  height: 25vw;
+  background: url("../images/my-img.jpg") center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 20%;
+  top: 0;
+  border-radius: 30px;
+}
+.home-container .circular-text {
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+  transition: 1s;
+  animation: rotate 10s infinite linear;
+}
+.home-container .circular-text img {
+  width: 15vw;
+  height: 15vw;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.home-container .typing-text {
+  position: absolute;
+  right: 20%;
+  top: 15%;
+}
+.home-container .typing-text h3 {
+  font-size: max(1vw, 1.5rem);
+  color: #324235;
+}
+.home-container .typing-text h3 span {
+  font-size: max(2vw, 2rem);
+}
+.home-container .home-heading {
+  position: absolute;
+  text-align: center;
+  margin-top: 15rem;
+}
+.home-container .home-heading h1 {
+  font-size: 15vw;
+  line-height: 15vw;
+  color: #324235;
+}
+
+.btn-container {
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-container .btn-wrapper {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.btn-container .btn-wrapper .hire-me-btn {
+  font-size: max(2vw, 4rem);
+  color: #324235;
+}
+.btn-container .btn-wrapper .hire-circle {
+  position: absolute;
+  border: 2px solid #324235;
+  width: max(15vw, 400px);
+  height: max(8vw, 200px);
+  border-radius: 50%;
+  z-index: -1;
+  transition: 0.5s;
+}
+.btn-container .btn-wrapper .hire-circle-1 {
+  transform: skewX(-10deg);
+}
+.btn-container .btn-wrapper .hire-circle-2 {
+  transform: skewX(10deg);
+}
+.btn-container .btn-wrapper:hover .hire-circle-1 {
+  transform: skewX(-45deg);
+}
+.btn-container .btn-wrapper:hover .hire-circle-2 {
+  transform: skewX(45deg);
+}
+
+.about-section {
+  margin-top: 15rem;
+  padding: 4rem 2.5rem;
+  background-color: #324235;
+  color: #FFF6E6;
+}
+.about-section .about-heading {
+  margin-bottom: 3rem;
+}
+.about-section .about-heading h1 {
+  font-size: max(6vw, 3rem);
+}
+.about-section .about-dsc p {
+  font-size: max(1vw, 2rem);
+  line-height: 2em;
+}
+
+@media screen and (max-width: 854px) {
+  .home-container {
+    overflow: hidden;
+  }
+  .home-container .img-container {
+    left: auto;
+    top: 40%;
+    width: 40vw;
+    height: 70vw;
+  }
+  .home-container .circular-text {
+    right: auto;
+    bottom: 22%;
+    left: 60%;
+  }
+  .home-container .circular-text img {
+    width: 35vw;
+    height: 35vw;
+  }
+  .home-container .typing-text {
+    top: 10%;
+  }
+  .home-container .home-heading {
+    margin-top: 10rem;
+  }
+
+  .btn-container .btn-wrapper .hire-me-btn {
+    font-size: 4vw;
+  }
+  .btn-container .btn-wrapper .hire-circle {
+    width: 35vw;
+    height: 20vw;
+  }
+
+  .about-section .about-dsc p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 690px) {
+  nav .nav-container .nav-links ul li .moving-text span {
+    font-size: 6vw;
+  }
+
+  .home-container .typing-text {
+    right: 15%;
+  }
+}
+@media screen and (max-width: 550px) {
+  nav {
+    padding: 1.5rem 1.3rem;
+  }
+  nav .toggle {
+    right: 20px;
+  }
+
+  .btn-container {
+    margin-top: -3rem;
+  }
+  .btn-container .btn-wrapper .hire-me-btn {
+    font-size: 8vw;
+  }
+  .btn-container .btn-wrapper .hire-circle {
+    width: 45vw;
+    height: 30vw;
+  }
+
+  .about-section {
+    padding: 2rem 1.3rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
