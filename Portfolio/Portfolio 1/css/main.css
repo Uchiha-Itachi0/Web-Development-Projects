@@ -278,6 +278,9 @@ nav .nav-container .nav-links.active {
   background-color: #FFF6E6;
   color: #324235;
 }
+.interest-section .interest-heading {
+  text-align: center;
+}
 .interest-section .interest-heading h1 {
   font-size: max(6vw, 3rem);
 }
@@ -366,6 +369,17 @@ nav .nav-container .nav-links.active {
 }
 .interest-section .interest-cards .interest-card .interest-msg p {
   font-size: max(2vw, 1.4em);
+}
+.interest-section .interest-footer {
+  margin-top: 8em;
+  text-align: center;
+}
+.interest-section .interest-footer h1 {
+  font-size: max(3vw, 2rem);
+  margin-bottom: 0.5em;
+}
+.interest-section .interest-footer h3 {
+  font-size: max(2vw, 1.3em);
 }
 
 @media screen and (min-width: 2124px) {
