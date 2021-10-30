@@ -1,8 +1,27 @@
 const toggle = document.querySelector('.toggle')
 const nav_links = document.querySelector('nav .nav-container .nav-links')
+const links = document.querySelectorAll('.nav-links ul li a')
 let typing_span = document.querySelector('.typing-text span')
-let text = ['FullStack Developer', 'DSA | ML | PYTHON Enthusiadt', 'Graphic Designer', 'Always Learning new thing']
-let speed = 100
+const scrollTopButton = document.querySelector(".scroll-top");
+
+window.onscroll = function(){scrollFunction()};
+
+function scrollFunction(){
+    if(document.body.scrollTop > 350 || document.documentElement.scrollTop > 350){
+        scrollTopButton.style.display = "block";
+    }
+    else{
+        scrollTopButton.style.display = "none";
+
+    }
+}
+
+scrollTopButton.addEventListener("click", () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0;
+})
+
+
 toggle.addEventListener('click', () => {
     toggle.classList.toggle('active')
     nav_links.classList.toggle('active')
@@ -22,3 +41,9 @@ $('.home-container .img-container').ripples({
     perturbance: 0.02
 })
 
+links.forEach(element => {
+    element.addEventListener('click', () => {
+        toggle.classList.remove('active')
+        nav_links.classList.remove('active')
+    })
+})

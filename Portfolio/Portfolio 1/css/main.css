@@ -5,6 +5,10 @@
   font-family: "Montserrat", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 li {
   list-style: none;
 }
@@ -15,6 +19,41 @@ a {
 
 body {
   background-color: #FFF6E6;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+.scroll-top .up-arrow {
+  position: relative;
+  font-size: max(3vw, 2em);
+  color: #788bc8;
+  cursor: pointer;
+}
+.scroll-top::before {
+  content: "";
+  position: absolute;
+  border: 2px solid #FFF6E6;
+  top: -1vw;
+  left: -1vw;
+  right: -1vw;
+  bottom: -1vw;
+  border-radius: 50%;
+  transform: skew(20deg);
+}
+.scroll-top::after {
+  content: "";
+  position: absolute;
+  border: 2px solid #324235;
+  top: -1vw;
+  left: -1vw;
+  right: -1vw;
+  bottom: -1vw;
+  border-radius: 50%;
+  transform: skew(-20deg);
 }
 
 nav {
@@ -382,6 +421,88 @@ nav .nav-container .nav-links.active {
   font-size: max(2vw, 1.3em);
 }
 
+.skill-section {
+  margin-top: 3em;
+  padding: 4rem 2.5rem;
+  background-color: #324235;
+  color: #FFF6E6;
+}
+.skill-section .skill-heading {
+  margin-bottom: 3em;
+}
+.skill-section .skill-heading h1 {
+  font-size: max(6vw, 3rem);
+}
+.skill-section .skill-container h5 {
+  font-size: max(1vw, 1em);
+  margin-bottom: 2em;
+}
+.skill-section .skill-container ul li {
+  list-style: decimal-leading-zero;
+  font-size: max(2vw, 2rem);
+  line-height: 2em;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.skill-section .skill-container ul li::before {
+  content: "";
+  padding-left: 5%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  transition: 0.5s;
+  color: #324235;
+  background-color: #FFF6E6;
+}
+.skill-section .skill-container ul li::after {
+  content: "Web development";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  color: #FFF6E6;
+  background-color: #324235;
+}
+.skill-section .skill-container ul li:nth-child(1)::before {
+  content: "85%";
+  width: 80%;
+}
+.skill-section .skill-container ul li:nth-child(1)::after {
+  content: "01. Web development";
+}
+.skill-section .skill-container ul li:nth-child(2)::before {
+  content: "60%";
+  width: 55%;
+}
+.skill-section .skill-container ul li:nth-child(2)::after {
+  content: "02. Python";
+}
+.skill-section .skill-container ul li:nth-child(3)::before {
+  content: "70%";
+  width: 65%;
+}
+.skill-section .skill-container ul li:nth-child(3)::after {
+  content: "03. Database(MongoDB)";
+}
+.skill-section .skill-container ul li:hover::before {
+  left: 0;
+}
+.skill-section .skill-container ul li:hover::after {
+  left: 100%;
+}
+.skill-section .skill-footer {
+  margin-top: 5em;
+  text-align: center;
+}
+.skill-section .skill-footer h3 {
+  font-size: max(2vw, 1.3em);
+  margin-bottom: 1em;
+}
+
 @media screen and (min-width: 2124px) {
   .home-container {
     height: 100vh;
@@ -468,6 +589,18 @@ nav .nav-container .nav-links.active {
 
   .about-section {
     padding: 2rem 1.3rem;
+  }
+
+  .skill-section {
+    padding: 2rem 1.3rem;
+  }
+  .skill-section .skill-container ul li {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 341px) {
+  .skill-section .skill-container ul li {
+    font-size: 6vw;
   }
 }
 
