@@ -593,7 +593,10 @@ nav .nav-container .nav-links.active {
   align-items: center;
   gap: 3em;
 }
-.contact-section .social-links i {
+.contact-section .social-links a {
+  color: #FFF6E6;
+}
+.contact-section .social-links a i {
   font-size: max(3vw, 1.5em);
 }
 .contact-section .social-links div {
@@ -615,22 +618,25 @@ nav .nav-container .nav-links.active {
 .footer {
   position: relative;
   overflow: hidden;
-  width: 50px;
-  height: max-content;
+  height: 20px;
 }
 .footer .moving-text {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
   overflow: hidden;
   position: absolute;
   color: #324235;
   width: 100%;
+  height: 100%;
   left: 100%;
   text-align: center;
-  font-size: max(1vw, 1em);
+  font-size: max(1vw, 0.7em);
   white-space: nowrap;
   animation: footer-move 20s infinite linear;
 }
 .footer .moving-text-2 {
-  animation-delay: 10s;
+  animation-delay: 8s;
 }
 @keyframes footer-move {
   0% {
@@ -765,6 +771,10 @@ nav .nav-container .nav-links.active {
   }
   .contact-section .social-links {
     flex-wrap: wrap;
+  }
+
+  .footer .moving-text {
+    font-size: 0.5em;
   }
 }
 
