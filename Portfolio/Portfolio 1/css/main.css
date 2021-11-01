@@ -515,36 +515,41 @@ nav .nav-container .nav-links.active {
 .project-section .project-heading h1 {
   font-size: max(6vw, 3rem);
 }
-.project-section .swiper {
+.project-section .project-cards .project-card {
   height: 40vw;
-}
-.project-section .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  border: 2px solid #324235;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-.project-section .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.project-section .project-cards .project-card .card-no {
+  position: absolute;
+  top: 18%;
+  right: 10%;
+  font-size: max(10vw, 6em);
+  color: rgba(50, 66, 53, 0.3);
 }
-.project-section .swiper {
-  margin-left: auto;
-  margin-right: auto;
+.project-section .project-cards .project-card .card-dsc {
+  text-align: center;
+}
+.project-section .project-cards .project-card .card-dsc h1 {
+  font-size: max(2vw, 1.4em);
+  margin-bottom: 1em;
+}
+.project-section .project-cards .project-card .card-dsc p {
+  pointer-events: none;
+  font-size: max(1.3vw, 15px);
+}
+.project-section .project-cards .project-card .card-btn {
+  margin-top: 5em;
+}
+.project-section .project-cards .project-card .card-btn a {
+  padding: 1em;
+  background-color: #324235;
+  color: #FFF6E6;
+  border-radius: 30px;
+  font-size: max(1.3vw, 15px);
 }
 
 @media screen and (min-width: 2124px) {
@@ -599,7 +604,6 @@ nav .nav-container .nav-links.active {
 
   .project-section .project-cards .project-card .card-btn a {
     font-size: 20px;
-    color: blue;
   }
 }
 @media screen and (max-width: 690px) {
@@ -615,6 +619,10 @@ nav .nav-container .nav-links.active {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  .project-section .project-cards .project-card {
+    height: 600px;
   }
 }
 @media screen and (max-width: 550px) {
