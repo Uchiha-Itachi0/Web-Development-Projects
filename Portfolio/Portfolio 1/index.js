@@ -1,31 +1,29 @@
 $(document).ready(function () {
-    const toggle = document.querySelector('.toggle')
-    const nav_links = document.querySelector('nav .nav-container .nav-links')
-    const links = document.querySelectorAll('.nav-links ul li a')
-    let typing_span = document.querySelector('.typing-text span')
-    const scrollTopButton = document.querySelector(".scroll-top");
+    const toggle = $('.toggle')
+    const nav_links = $('nav .nav-container .nav-links')
+    const links = $('.nav-links ul li a')
+    let typing_span = $('.typing-text span')
+    const scrollTopButton = $(".scroll-top");
 
-    window.onscroll = function () { scrollFunction() };
+    $(window).scroll(function () {
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
-            scrollTopButton.style.display = "block";
+        if (this.scrollY > 500) {
+            scrollTopButton.css("display", "block");
         }
         else {
-            scrollTopButton.style.display = "none";
+            scrollTopButton.css("display", "none");
 
         }
-    }
+    });
 
-    scrollTopButton.addEventListener("click", () => {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0;
-    })
+    scrollTopButton.click(function () {
+        $('html').animate({ scrollTop: 0 });
+    });
 
 
-    toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active')
-        nav_links.classList.toggle('active')
+    toggle.click(function () {
+        toggle.toggleClass("active");
+        nav_links.toggleClass("active");
     })
 
 
@@ -42,11 +40,10 @@ $(document).ready(function () {
         perturbance: 0.02
     })
 
-    links.forEach(element => {
-        element.addEventListener('click', () => {
-            toggle.classList.remove('active')
-            nav_links.classList.remove('active')
-        })
+    links.click(function () {
+        // console.log();
+        toggle.removeClass('active');
+        nav_links.removeClass('active');
     })
 
     // owl carousel script
