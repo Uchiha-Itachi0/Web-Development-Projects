@@ -4,13 +4,13 @@ const links = document.querySelectorAll('.nav-links ul li a')
 let typing_span = document.querySelector('.typing-text span')
 const scrollTopButton = document.querySelector(".scroll-top");
 
-window.onscroll = function(){scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
-function scrollFunction(){
-    if(document.body.scrollTop > 350 || document.documentElement.scrollTop > 350){
+function scrollFunction() {
+    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
         scrollTopButton.style.display = "block";
     }
-    else{
+    else {
         scrollTopButton.style.display = "none";
 
     }
@@ -47,3 +47,33 @@ links.forEach(element => {
         nav_links.classList.remove('active')
     })
 })
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    breakpoints: {
+        // when window width is >= 320px
+        0: {
+            slidesPerView: 1,
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 2,
+        },
+        1000: {
+            slidesPerView: 3
+        }
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
