@@ -516,11 +516,12 @@ nav .nav-container .nav-links.active {
   font-size: max(6vw, 3rem);
 }
 .project-section .swiper {
-  height: max(40vw, 600px);
+  height: 40vw;
 }
 .project-section .swiper-slide {
   text-align: center;
   font-size: 18px;
+  background: #fff;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -535,37 +536,15 @@ nav .nav-container .nav-links.active {
   -webkit-align-items: center;
   align-items: center;
 }
-.project-section .swiper-slide .project-card {
-  border: 2px solid #324235;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.project-section .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.project-section .swiper-slide .project-card .card-no {
-  position: absolute;
-  top: 18%;
-  right: 10%;
-  font-size: max(10vw, 6em);
-  color: rgba(50, 66, 53, 0.3);
-}
-.project-section .swiper-slide .project-card .card-dsc h1 {
-  font-size: max(2vw, 1.4em);
-  margin-bottom: 1em;
-}
-.project-section .swiper-slide .project-card .card-dsc p {
-  pointer-events: none;
-  font-size: max(1.3vw, 15px);
-}
-.project-section .swiper-slide .project-card .card-btn {
-  margin-top: 5em;
-}
-.project-section .swiper-slide .project-card .card-btn a {
-  padding: 1em;
-  background-color: #324235;
-  color: #FFF6E6;
-  border-radius: 30px;
-  font-size: max(1.3vw, 15px);
+.project-section .swiper {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (min-width: 2124px) {
