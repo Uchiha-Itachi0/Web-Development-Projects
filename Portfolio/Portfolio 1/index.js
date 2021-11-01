@@ -35,13 +35,8 @@ $(document).ready(function () {
     });
 
 
-    $('.home-container .img-container').ripples({
-        blurRadius: 20,
-        perturbance: 0.02
-    })
-
     links.click(function () {
-        // console.log();
+        console.log('on');
         toggle.removeClass('active');
         nav_links.removeClass('active');
     })
@@ -67,4 +62,9 @@ $(document).ready(function () {
             }
         }
     });
+
+    $('.home-container .img-container').ripples({
+        blurRadius: 20,
+        perturbance: 0.02
+    })
 });
