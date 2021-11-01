@@ -515,67 +515,62 @@ nav .nav-container .nav-links.active {
 .project-section .project-heading h1 {
   font-size: max(6vw, 3rem);
 }
-.project-section .teams .title::after {
-  content: "projects";
-}
-.project-section .teams .carousel .card {
-  background: #222;
-  border-radius: 6px;
-  padding: 25px 35px;
-  text-align: center;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.project-section .teams .carousel .card:hover {
-  background: #12ac04;
-}
-.project-section .teams .carousel .card .box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-.project-section .teams .carousel .card:hover .box {
-  transform: scale(1.05);
-}
-.project-section .teams .carousel .card .text {
-  color: #fff;
-  font-size: 25px;
-  font-weight: 500;
-  margin: 10px 0 7px 0;
-}
-.project-section .teams .carousel .card img {
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 5px solid #12ac04;
-  transition: all 0.3s ease;
-}
-.project-section .teams .carousel .card:hover img {
-  border-color: #fff;
-}
-.project-section .owl-dots {
+.project-section .project-cards .owl-dots {
   text-align: center;
   margin-top: 20px;
 }
-.project-section .owl-dot {
+.project-section .project-cards .owl-dot {
   height: 13px;
   width: 13px;
   margin: 0 5px;
   outline: none !important;
   border-radius: 50%;
-  border: 2px solid #12ac04 !important;
+  border: 2px solid #324235;
   transition: all 0.3s ease;
 }
-.project-section .owl-dot.active {
+.project-section .project-cards .owl-dot.active {
   width: 35px;
   border-radius: 14px;
 }
-.project-section .owl-dot.active,
-.project-section .owl-dot:hover {
-  background: #12ac04 !important;
+.project-section .project-cards .owl-dot.active,
+.project-section .project-cards .owl-dot:hover {
+  background: #324235;
+}
+.project-section .project-cards .project-card {
+  height: 40vw;
+  border: 2px solid #324235;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project-section .project-cards .project-card .card-no {
+  position: absolute;
+  top: 18%;
+  right: 10%;
+  font-size: max(10vw, 6em);
+  color: rgba(50, 66, 53, 0.3);
+}
+.project-section .project-cards .project-card .card-dsc {
+  text-align: center;
+}
+.project-section .project-cards .project-card .card-dsc h1 {
+  font-size: max(2vw, 1.4em);
+  margin-bottom: 1em;
+}
+.project-section .project-cards .project-card .card-dsc p {
+  pointer-events: none;
+  font-size: max(1.3vw, 15px);
+}
+.project-section .project-cards .project-card .card-btn {
+  margin-top: 10em;
+}
+.project-section .project-cards .project-card .card-btn a {
+  padding: 1em;
+  background-color: #324235;
+  color: #FFF6E6;
+  border-radius: 30px;
+  font-size: max(1.3vw, 15px);
 }
 
 @media screen and (min-width: 2124px) {
