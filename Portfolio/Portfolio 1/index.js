@@ -52,7 +52,6 @@ var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
-    loopFillGroupWithBlank: true,
     breakpoints: {
         // when window width is >= 320px
         0: {
