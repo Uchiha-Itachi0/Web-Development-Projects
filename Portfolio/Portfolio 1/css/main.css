@@ -515,6 +515,68 @@ nav .nav-container .nav-links.active {
 .project-section .project-heading h1 {
   font-size: max(6vw, 3rem);
 }
+.project-section .teams .title::after {
+  content: "projects";
+}
+.project-section .teams .carousel .card {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.project-section .teams .carousel .card:hover {
+  background: #12ac04;
+}
+.project-section .teams .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.project-section .teams .carousel .card:hover .box {
+  transform: scale(1.05);
+}
+.project-section .teams .carousel .card .text {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+.project-section .teams .carousel .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #12ac04;
+  transition: all 0.3s ease;
+}
+.project-section .teams .carousel .card:hover img {
+  border-color: #fff;
+}
+.project-section .owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.project-section .owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none !important;
+  border-radius: 50%;
+  border: 2px solid #12ac04 !important;
+  transition: all 0.3s ease;
+}
+.project-section .owl-dot.active {
+  width: 35px;
+  border-radius: 14px;
+}
+.project-section .owl-dot.active,
+.project-section .owl-dot:hover {
+  background: #12ac04 !important;
+}
 
 @media screen and (min-width: 2124px) {
   .home-container {
