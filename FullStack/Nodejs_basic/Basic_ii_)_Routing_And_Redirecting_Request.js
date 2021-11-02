@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
 
     // Can only be triggered by the post method
     if(url === '/message' && method === 'POST'){
-        fs.writeFileSync('Basic_ii_)_Message.txt', 'Created file');
+        fs.writeFileSync('Basic_ii_)_Message.txt', 'hard coded hello');
 
         // After creating file we want to redirect user.
         // Status code 302 is used for redirect.
