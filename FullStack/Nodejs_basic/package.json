@@ -1,0 +1,12 @@
+{
+  "name": "nodejs_basic",
+  "version": "1.0.0",
+  "description": "This folder contain some basic of nodejs",
+  "main": "server_using_node_js.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anubhav Shukla",
+  "license": "ISC"
+}

@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     $(window).scroll(function () {
 
-        if (this.scrollY > 500) {
+        if (this.scrollY > 360) {
             scrollTopButton.css("display", "block");
         }
         else {
