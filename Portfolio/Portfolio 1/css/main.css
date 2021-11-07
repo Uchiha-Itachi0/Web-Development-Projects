@@ -698,7 +698,10 @@ nav .nav-container .nav-links.active {
     right: -5%;
   }
 
-  .skill-section .skill-container ul li:nth-child(1) {
+  .skill-section .skill-container h5 {
+    font-size: 3vw;
+  }
+  .skill-section .skill-container ul li {
     font-size: 3.5vw;
   }
 
@@ -747,9 +750,6 @@ nav .nav-container .nav-links.active {
   .skill-section {
     padding: 2rem 1.3rem;
   }
-  .skill-section .skill-container ul li {
-    font-size: 1.5em;
-  }
 
   .project-section {
     padding: 2rem 1.3rem;
@@ -760,10 +760,6 @@ nav .nav-container .nav-links.active {
   }
 }
 @media screen and (max-width: 341px) {
-  .skill-section .skill-container ul li {
-    font-size: 6vw;
-  }
-
   .project-section .project-heading h1 {
     font-size: 10vw;
   }
