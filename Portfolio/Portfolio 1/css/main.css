@@ -473,7 +473,7 @@ nav .nav-container .nav-links.active {
   width: 80%;
 }
 .skill-section .skill-container ul li:nth-child(1)::after {
-  content: "01. Web development";
+  content: "01. Web development(Javascript, Nodejs, React)";
 }
 .skill-section .skill-container ul li:nth-child(2)::before {
   content: "60%";
@@ -696,6 +696,10 @@ nav .nav-container .nav-links.active {
   }
   .interest-section .interest-cards .interest-card .interest-img .interest-img-ring::before {
     right: -5%;
+  }
+
+  .skill-section .skill-container ul li:nth-child(1) {
+    font-size: 3.5vw;
   }
 
   .project-section .project-cards .project-card .card-btn a {
