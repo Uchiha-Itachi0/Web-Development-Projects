@@ -311,6 +311,24 @@ nav .nav-container .nav-links.active {
   font-size: max(1vw, 2rem);
   line-height: 2em;
 }
+.about-section .about-dsc p a {
+  color: #FFF6E6;
+  font-size: max(2.5vw, 2.5rem);
+  position: relative;
+}
+.about-section .about-dsc p a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: 0;
+  border-radius: 13px;
+  background-color: #FFF6E6;
+  transition: 0.3s;
+}
+.about-section .about-dsc p a:hover::before {
+  width: 100%;
+}
 
 .interest-section {
   margin-top: 5em;
@@ -458,7 +476,7 @@ nav .nav-container .nav-links.active {
   background-color: #FFF6E6;
 }
 .skill-section .skill-container ul li::after {
-  content: "Web development";
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -473,7 +491,7 @@ nav .nav-container .nav-links.active {
   width: 80%;
 }
 .skill-section .skill-container ul li:nth-child(1)::after {
-  content: "01. Web development(Javascript, Nodejs, React)";
+  content: "01. Web development( MERN )";
 }
 .skill-section .skill-container ul li:nth-child(2)::before {
   content: "60%";
@@ -690,6 +708,9 @@ nav .nav-container .nav-links.active {
   .about-section .about-dsc p {
     font-size: 20px;
   }
+  .about-section .about-dsc p a {
+    font-size: 25px;
+  }
 
   .interest-section .interest-cards {
     margin-top: 3em;
@@ -702,7 +723,7 @@ nav .nav-container .nav-links.active {
     font-size: 3vw;
   }
   .skill-section .skill-container ul li {
-    font-size: 3.5vw;
+    font-size: 5.5vw;
   }
 
   .project-section .project-cards .project-card .card-btn a {
