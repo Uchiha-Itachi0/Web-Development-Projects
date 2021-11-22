@@ -1,0 +1,18 @@
+<%- include('../partial/header'); %>
+    <section class="header">
+        <h1 class="<%= products.length === 0 ? '' : 'hide' %> ">No product to display</h1>
+        <div class="products">
+            <% products.map(({title, imgURL, price, desc})=> { %>
+                <div class="product-container">
+                    <h2>
+                        <%= title %>
+                    </h2>
+                    <img src="<%= imgURL %> " alt="krishna balram painting">
+                    <h1>price : <%= price %> </h1>
+                    <p><%= desc %> </p>
+                    <button>Add to cart</button>
+                </div>
+                <% }) %>
+        </div>
+    </section>
+    <%- include('../partial/footer'); %>

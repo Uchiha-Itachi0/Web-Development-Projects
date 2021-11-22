@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+
+}
+
+nav{
+    padding: 2em;
+    background-color: aqua;
+}
+nav ul{
+    display: flex;
+    gap: 2em;
+}
+nav ul a li{
+    font-size: 2rem;
+}
+nav ul a{
+    text-decoration: none;
+    color: rgb(0, 0, 0)
+}
+nav ul a.active{
+    color: rgba(0, 0, 0, 0.5);
+}
+section{
+    padding: 2em;
+}
+section .hide{
+    display: none;
+}
+section .products{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+section .products .product-container{
+    border: 2px solid black;
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    margin-bottom: 2em;
+    padding: 1.5em 0;
+}
+section .products h2{
+    font-size: 2rem;
+    margin-bottom: 1.5em;
+}
+
+section .products p {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+section .products img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+section .products .product-container button{
+    padding: .8em 1.5em;
+}
+.form-container{
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+.form-container .input-container{
+    display: flex;
+    flex-direction: column;
+}
+.form-container input, .form-container textarea{
+    font-size: 1.3rem;
+    padding: 0.8 1em;
+    width: 100%;
+    margin-bottom: 1em;
+}
+.form-container input:focus, .form-container textarea:focus{
+    border: 2px solid aqua;
+    outline: none;
+}
+
+.form-container form button{
+    display: block;
+    padding: .5em 2em;
+    margin-top: 1em;
+    font-size: 1.3rem;
+}
+
+.error-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.error-page h1{
+    color: red;
+}
