@@ -80,7 +80,7 @@ body {
   font-size: max(1vw, 8px);
   color: rgba(255, 255, 255, 0.7);
 }
-.container .user .activity-rec p:hover {
+.container .user .activity-rec p:hover, .container .user .activity-rec p.active {
   color: #fff;
 }
 .container .activity .activity-info {
@@ -226,6 +226,17 @@ body {
     margin-bottom: 2vw;
     width: 250px;
     height: 100px;
+  }
+  .container .activity .activity-info .activity-box .time-tracker {
+    padding: 20px;
+  }
+  .container .activity .activity-info .activity-box .time-tracker .time_heading .menu {
+    width: 20px;
+    height: 20px;
+  }
+  .container .activity .activity-info .activity-box .time-tracker .time_heading .menu span {
+    width: 5px;
+    height: 5px;
   }
   .container .activity .activity-info .activity-box .time-tracker .time {
     display: flex;
