@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  color: #7f9c9f;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  background-color: #c5e4e7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+.container .calculator {
+  margin-top: 2vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: max(55vw, 500px);
+  height: max(30vw, 250px);
+  border-radius: 15px;
+  background-color: white;
+}
+.container .calculator .calculate_section {
+  padding: 1.9vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container .calculator .calculate_section .bill_section p {
+  font-size: max(1.2vw, 12px);
+  margin-bottom: 0.7vw;
+  color: #7f9c9f;
+}
+.container .calculator .calculate_section .bill_section .bill {
+  position: relative;
+}
+.container .calculator .calculate_section .bill_section .bill input {
+  font-size: max(1.5vw, 16px);
+  padding: 0.5vw;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: solid white;
+  background-color: #f4fafa;
+  text-align: right;
+  color: #00494d;
+}
+.container .calculator .calculate_section .bill_section .bill input:focus {
+  border: solid #26c0ab;
+}
+.container .calculator .calculate_section .bill_section .bill svg {
+  position: absolute;
+  top: max(1vw, 10px);
+  left: max(0.5vw, 5px);
+}
+.container .calculator .calculate_section .tip_section p {
+  font-size: max(1.2vw, 12px);
+  margin-bottom: 0.7vw;
+}
+.container .calculator .calculate_section .tip_section .tip_box_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box {
+  width: max(7vw, 70px);
+  height: max(3vw, 35px);
+  font-size: max(1.5vw, 16px);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box.not_custom {
+  background-color: #00494d;
+  color: #c5e4e7;
+  margin-bottom: 0.8vw;
+  cursor: pointer;
+}
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box.not_custom:hover {
+  background-color: #c5e4e7;
+  color: #00494d;
+}
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box input {
+  padding: 0.8vw;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  text-align: right;
+  border-radius: 5px;
+  font-size: max(1.2vw, 12px);
+  background-color: #f4fafa;
+  color: #00494d;
+  font-size: max(1.4vw, 14px);
+}
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box input:focus {
+  border: solid #26c0ab;
+}
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box ::-webkit-input-placeholder {
+  text-align: center;
+}
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box :-moz-placeholder {
+  text-align: center;
+}
+.container .calculator .calculate_section .people_section p {
+  font-size: max(1.2vw, 12px);
+  margin-bottom: 0.7vw;
+  color: #7f9c9f;
+}
+.container .calculator .calculate_section .people_section .people {
+  position: relative;
+}
+.container .calculator .calculate_section .people_section .people input {
+  font-size: max(1.5vw, 16px);
+  padding: 0.5vw;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  border: solid white;
+  background-color: #f4fafa;
+  text-align: right;
+  color: #00494d;
+}
+.container .calculator .calculate_section .people_section .people input:focus {
+  border: solid #26c0ab;
+}
+.container .calculator .calculate_section .people_section .people svg {
+  position: absolute;
+  top: max(1vw, 10px);
+  left: max(0.5vw, 5px);
+}
+.container .calculator .display_section {
+  margin: 1.9vw;
+  background-color: #00494d;
+  border-radius: 15px;
+  padding: 1.9vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.container .calculator .display_section .amount_display {
+  padding: 0.8vw;
+}
+.container .calculator .display_section .amount_display .tip_amount {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.6vw;
+}
+.container .calculator .display_section .amount_display .tip_amount .tip_amount_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .calculator .display_section .amount_display .tip_amount .tip_amount_text p:nth-child(1) {
+  color: white;
+  font-size: max(1.1vw, 12px);
+}
+.container .calculator .display_section .amount_display .tip_amount .tip_amount_text p:nth-child(2) {
+  font-size: max(0.9vw, 10px);
+}
+.container .calculator .display_section .amount_display .tip_amount .tip_amount_money h1 {
+  font-size: max(3vw, 20px);
+}
+.container .calculator .display_section .amount_display .total_amount {
+  display: flex;
+  justify-content: space-between;
+}
+.container .calculator .display_section .amount_display .total_amount .total_amount_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container .calculator .display_section .amount_display .total_amount .total_amount_text p:nth-child(1) {
+  color: white;
+  font-size: max(1.1vw, 12px);
+}
+.container .calculator .display_section .amount_display .total_amount .total_amount_text p:nth-child(2) {
+  font-size: max(0.9vw, 10px);
+}
+.container .calculator .display_section .amount_display .total_amount .total_amount_money h1 {
+  font-size: max(3vw, 20px);
+}
+.container .calculator .reset_button button {
+  width: 100%;
+  font-size: max(1.5vw, 16px);
+  background-color: #26c0ab;
+  color: #00494d;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5vw;
+  cursor: pointer;
+}
+.container .calculator .reset_button button:hover {
+  background-color: #c5e4e7;
+}
+
+@media screen and (max-width: 530px) {
+  .container .calculator {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: max-content;
+  }
+  .container .calculator .calculate_section {
+    padding: 1.5em;
+    gap: 1.5em;
+  }
+  .container .calculator .calculate_section .bill_section .bill input {
+    padding: 0.3em;
+  }
+  .container .calculator .calculate_section .people_section .people input {
+    padding: 0.3em;
+  }
+  .container .calculator .display_section {
+    margin: 1.5em;
+    gap: 1.5em;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
