@@ -31,7 +31,7 @@ body {
   margin-top: 2vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: max(55vw, 500px);
+  width: max-content;
   height: max(30vw, 250px);
   border-radius: 15px;
   background-color: white;
@@ -92,7 +92,7 @@ body {
   margin-bottom: 0.8vw;
   cursor: pointer;
 }
-.container .calculator .calculate_section .tip_section .tip_box_section .tip_box.not_custom:hover {
+.container .calculator .calculate_section .tip_section .tip_box_section .tip_box.not_custom:hover, .container .calculator .calculate_section .tip_section .tip_box_section .tip_box.not_custom.active {
   background-color: #c5e4e7;
   color: #00494d;
 }
@@ -118,10 +118,21 @@ body {
 .container .calculator .calculate_section .tip_section .tip_box_section .tip_box :-moz-placeholder {
   text-align: center;
 }
-.container .calculator .calculate_section .people_section p {
+.container .calculator .calculate_section .people_section .people_section_text {
+  display: flex;
+  justify-content: space-between;
+}
+.container .calculator .calculate_section .people_section .people_section_text p {
   font-size: max(1.2vw, 12px);
   margin-bottom: 0.7vw;
   color: #7f9c9f;
+}
+.container .calculator .calculate_section .people_section .people_section_text p:nth-child(2) {
+  display: none;
+  color: red;
+}
+.container .calculator .calculate_section .people_section .people_section_text p:nth-child(2).active {
+  display: block;
 }
 .container .calculator .calculate_section .people_section .people {
   position: relative;
@@ -136,6 +147,9 @@ body {
   background-color: #f4fafa;
   text-align: right;
   color: #00494d;
+}
+.container .calculator .calculate_section .people_section .people input.active, .container .calculator .calculate_section .people_section .people input:focus.active {
+  border-color: red;
 }
 .container .calculator .calculate_section .people_section .people input:focus {
   border: solid #26c0ab;
@@ -153,6 +167,8 @@ body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  min-width: max(30vw, 200px);
+  max-width: max-content;
 }
 .container .calculator .display_section .amount_display {
   padding: 0.8vw;
@@ -230,6 +246,7 @@ body {
   .container .calculator .display_section {
     margin: 1.5em;
     gap: 1.5em;
+    max-width: inherit;
   }
 }
 
