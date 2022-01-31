@@ -3,9 +3,9 @@ var total = document.getElementById('total');
 var bill_input = document.getElementById('bill_input');
 var number_of_people = document.getElementById('people_input');
 var no_zero = document.getElementById('no_zero');
+var custom_input = document.getElementById('custom_input');
 var tip_boxes = document.querySelectorAll('.not_custom');
-var current_active = document.querySelector('.not_custom.active')
-var tip_persentage = 0;
+var current_active = null;
 
 function getBillValue() {
     return bill_input.value;
@@ -24,16 +24,31 @@ function tipCalculate(bill, tip_persentage) {
     return bill * (tip_persentage / 100);
 }
 
-bill_input.onkeyup = () => {
+function checkingCustomOrGiven(tip_money) {
+    if (custom_input.value) {
 
-    var people = getNumberOfPeople() ? getNumberOfPeople() : 1;
-    var text_to_write = null;
-    if (people !== '0') {
+        tip_money = bill_input.value * (custom_input.value / 100);
+    }
+    else {
         tip_boxes.forEach(element => {
+
             if (element.classList.contains('active')) {
                 tip_money = tipCalculate(bill_input.value, element);
             }
         })
+    }
+    return tip_money
+}
+// -----------------------BILL SECTION-------------------------------
+bill_input.onkeyup = () => {
+
+    var people = getNumberOfPeople() ? getNumberOfPeople() : 1;
+    var text_to_write = null;
+    var tip_money = 0;
+    if (people !== '0') {
+
+        tip_money = checkingCustomOrGiven(tip_money);
+
         text_to_write = bill_input.value ? (Number(bill_input.value) + Number(tip_money)) / people : 0;
         tip_money = tip_money / people
         writeOnScreen(total, text_to_write);
@@ -46,11 +61,20 @@ bill_input.onkeyup = () => {
 
 }
 
+// -----------------------TIP SECTION-------------------------------
+
+
 tip_boxes.forEach(element => {
     element.addEventListener('click', e => {
+        custom_input.value = null;
+        // If bill or people value are not given then our logic will fail
+
         var bill = getBillValue() ? getBillValue() : 0;
         var people = getNumberOfPeople() ? getNumberOfPeople() : 1;
-        current_active.classList.remove('active');
+
+        if (current_active) {
+            current_active.classList.remove('active');
+        }
         e.target.classList.add('active');
 
         if (bill != 0) {
@@ -68,9 +92,34 @@ tip_boxes.forEach(element => {
     })
 })
 
+// -----------------------CUSTOM TIP SECTION-------------------------------
+
+custom_input.onkeyup = () => {
+    if (current_active) {
+        current_active.classList.remove('active');
+    }
+    // If bill or people value are not given then our logic will fail
+    var bill = getBillValue() ? getBillValue() : 0;
+    var people = getNumberOfPeople() ? getNumberOfPeople() : 1;
+
+    if (bill != 0) {
+        var tip_amount = bill * (custom_input.value / 100);
+        tip_per_person = tip_amount / people;
+        total_amount = Number(bill) + Number(tip_amount);
+        total_amount = total_amount / people;
+        writeOnScreen(tip, tip_per_person);
+        writeOnScreen(total, total_amount);
+    }
+}
+
+// -----------------------NUMBER OF PEOPLE SECTION-------------------------------
+
 number_of_people.onkeyup = () => {
     var bill = getBillValue();
+    // If people is not enter or is 0 logic will fail
     var people = number_of_people.value ? number_of_people.value : 1;
+    var tip_text = 0;
+    // Checking for 0
     if (number_of_people.value === '0') {
         no_zero.classList.add('active');
         number_of_people.classList.add('active');
@@ -78,11 +127,10 @@ number_of_people.onkeyup = () => {
     else {
         no_zero.classList.remove('active');
         number_of_people.classList.remove('active');
-        tip_boxes.forEach(element => {
-            if (element.classList.contains('active')) {
-                tip_text = tipCalculate(bill, element);
-            }
-        })
+
+        // For calculating tip and checking if it's custom or given tip value 
+        tip_text = checkingCustomOrGiven(tip_text);
+
         var text_to_write = (Number(bill) + Number(tip_text)) / people;
         tip_text = tip_text / people
         writeOnScreen(total, text_to_write);
@@ -91,9 +139,15 @@ number_of_people.onkeyup = () => {
 
 }
 
-function resetButton(){
+// -----------------------RESET SECTION SECTION-------------------------------
+
+function resetButton() {
     bill_input.value = null;
     number_of_people.value = null;
     tip.innerText = '$0.00';
     total.innerText = '$0.00';
+    custom_input.value = null;
+    if (current_active) {
+        current_active.classList.remove('active')
+    }
 }
