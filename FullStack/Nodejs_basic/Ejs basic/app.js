@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 const port = 3000;
 
 app.use(publicRoute);
-app.use(adminRoute);
+app.use('/admin', adminRoute);
 app.use(errorController)
 
 app.listen(port, () => {

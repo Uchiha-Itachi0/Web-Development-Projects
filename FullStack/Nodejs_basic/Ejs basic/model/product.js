@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { dirname } = require('path');
 const path = require('path')
 
 const p = path.join(path.dirname(process.mainModule.filename),
@@ -12,7 +13,6 @@ const getProductFromFile = (cb) => {
         if (err) {
             return cb([])
         }
-        console.log('sdfasd', cb);
         return cb(JSON.parse(datafile))
     })
 }
@@ -25,6 +25,8 @@ module.exports = class Product {
     }
 
     save() {
+        // Assingning unique id to every objects
+        this.id = Math.random().toString();
         // !* To append in the existing file we have to first read the file
         // !* But the file is in JSON format therefore we have to first
         // !* convert the JSON to JS object then append the input data to
@@ -51,7 +53,6 @@ module.exports = class Product {
     }
 
     static fetchAll(cb) {
-
         // !* Defined a callback function so that the products will be
         // !* will displayed when the reading file is done.
         // !* We have done this because readfile is sync fucntion and node
@@ -60,6 +61,23 @@ module.exports = class Product {
         // !* product will be undifined and ejs will give error
         // !* But since we have defined the callback fucntion the render will only
         // !* execute when the fetchAll method is done.
+
+        // const p = path.join(path.dirname(process.mainModule.filename), 
+        // 'Data', 'product.json');
+        // fs.readFile(p, (err, fileContent) => {
+        //     if(err){
+        //         // Always except an array
+        //         return [];
+        //     }
+        //     return JSON.parse(fileContent)
+
+        // });
         getProductFromFile(cb);
+    }
+    static findById(prodId, cb){
+        getProductFromFile(product => {
+            const prod = product.find(p => p.id === prodId);
+            cb(prod);
+        });
     }
 }

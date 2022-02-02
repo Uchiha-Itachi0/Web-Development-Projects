@@ -2,15 +2,22 @@
     <section class="header">
         <h1 class="<%= products.length === 0 ? '' : 'hide' %> ">No product to display</h1>
         <div class="products">
-            <% products.map(({title, imgURL, price, desc})=> { %>
+            <% products.map(({title, imgURL, price, desc, id})=> { %>
                 <div class="product-container">
                     <h2>
                         <%= title %>
                     </h2>
                     <img src="<%= imgURL %> " alt="krishna balram painting">
-                    <h1>price : <%= price %> </h1>
-                    <p><%= desc %> </p>
-                    <button>Add to cart</button>
+                    <h1>price : <%= price %>
+                    </h1>
+                    <p>
+                        <%= desc %>
+                    </p>
+                    <form action="/cart" method="post">
+                        <a href="/product/<%= id %> " class="btn">Details</a>
+                        <button class="button" type="submit">Add to cart</button>
+                        <input type="hidden" name="product_id", value = "<%= id %> ">
+                    </form>
                 </div>
                 <% }) %>
         </div>

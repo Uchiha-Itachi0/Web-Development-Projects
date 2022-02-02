@@ -1,2 +1,19 @@
 <%- include('../partial/header') %>
-<%- include('../partial/footer') %> 
+    <div class="products">
+        <div class="product-container">
+            <h2>
+                <%= products.title %>
+            </h2>
+            <img src="<%= products.imgURL %> " alt="krishna balram painting">
+            <h1>price : <%= products.price %>
+            </h1>
+            <p>
+                <%= products.desc %>
+            </p>    
+            <form action="/cart" method="post">
+                <button class="button" type="submit">Add to cart</button>
+                <input type="hidden" name="product_id", value = "<%= products.id %> ">
+            </form>
+        </div>
+    </div>
+    <%- include('../partial/footer') %>

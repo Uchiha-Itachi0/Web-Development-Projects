@@ -16,12 +16,13 @@ nav ul{
     display: flex;
     gap: 2em;
 }
+
 nav ul a li{
     font-size: 2rem;
 }
 nav ul a{
     text-decoration: none;
-    color: rgb(0, 0, 0)
+    color: rgb(0, 0, 0);
 }
 nav ul a.active{
     color: rgba(0, 0, 0, 0.5);
@@ -29,38 +30,64 @@ nav ul a.active{
 section{
     padding: 2em;
 }
-section .hide{
+.hide{
     display: none;
 }
-section .products{
+.products{
     text-align: center;
     display: flex;
     flex-wrap: wrap;
 }
-section .products .product-container{
+.products .product-container{
     border: 2px solid black;
     width: 400px;
-    height: 600px;
+    height: max-content;
     margin: auto;
     margin-bottom: 2em;
     padding: 1.5em 0;
 }
-section .products h2{
+.products h2{
     font-size: 2rem;
     margin-bottom: 1.5em;
 }
 
-section .products p {
+.products p {
     font-size: 1.2em;
     margin: 1em 0;
 }
-section .products img{
+.products img{
     width: 300px;
     height: 300px;
     object-fit: contain;
 }
-section .products .product-container button{
+.products .product-container .button{
     padding: .8em 1.5em;
+}
+.products .product-container .btn{
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    padding: 1em;
+    font-size: 1.2em;
+}
+.edit-del-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+.products .product-container a.button,
+.products .product-container .del-button{
+    border: 1px solid aqua;
+    color: black;
+    text-decoration: none;
+    display: inline;
+    /* margin-top: 1em; */
+    background-color: transparent;
+    cursor: pointer;
+}
+.products .product-container .del-button{
+    font-size: 1em;
 }
 .form-container{
     padding: 2em;
@@ -97,4 +124,9 @@ section .products .product-container button{
 }
 .error-page h1{
     color: red;
+}
+@media screen and (max-width : 905px) {
+    nav ul{
+        flex-direction: column;
+    }
 }
