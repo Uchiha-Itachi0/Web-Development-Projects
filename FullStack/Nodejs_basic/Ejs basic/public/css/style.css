@@ -1,44 +1,43 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-li{
+li {
     list-style: none;
-
 }
 
-nav{
+nav {
     padding: 2em;
     background-color: aqua;
 }
-nav ul{
+nav ul {
     display: flex;
     gap: 2em;
 }
 
-nav ul a li{
+nav ul a li {
     font-size: 2rem;
 }
-nav ul a{
+nav ul a {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
-nav ul a.active{
+nav ul a.active {
     color: rgba(0, 0, 0, 0.5);
 }
-section{
+section {
     padding: 2em;
 }
-.hide{
+.hide {
     display: none;
 }
-.products{
+.products {
     text-align: center;
     display: flex;
     flex-wrap: wrap;
 }
-.products .product-container{
+.products .product-container {
     border: 2px solid black;
     width: 400px;
     height: max-content;
@@ -46,7 +45,7 @@ section{
     margin-bottom: 2em;
     padding: 1.5em 0;
 }
-.products h2{
+.products h2 {
     font-size: 2rem;
     margin-bottom: 1.5em;
 }
@@ -55,29 +54,29 @@ section{
     font-size: 1.2em;
     margin: 1em 0;
 }
-.products img{
+.products img {
     width: 300px;
     height: 300px;
     object-fit: contain;
 }
-.products .product-container .button{
-    padding: .8em 1.5em;
+.products .product-container .button {
+    padding: 0.8em 1.5em;
 }
-.products .product-container .btn{
+.products .product-container .btn {
     text-decoration: none;
     color: #000;
     display: inline-block;
     padding: 1em;
     font-size: 1.2em;
 }
-.edit-del-container{
+.edit-del-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5em;
+    gap: 0.5em;
 }
 .products .product-container a.button,
-.products .product-container .del-button{
+.products .product-container .del-button {
     border: 1px solid aqua;
     color: black;
     text-decoration: none;
@@ -86,47 +85,63 @@ section{
     background-color: transparent;
     cursor: pointer;
 }
-.products .product-container .del-button{
+.products .product-container .del-button {
     font-size: 1em;
 }
-.form-container{
+
+.order-button {
+    width: 100%;
+    padding: 1em;
+    font-size:2em;
+    background-color:aqua;
+    border: none;
+    color: black;
+    text-decoration: none;
+    display: inline;
+    /* margin-top: 1em; */
+    /* background-color: transparent; */
+    cursor: pointer;
+}
+.form-container {
     padding: 2em;
     display: flex;
     flex-direction: column;
 }
-.form-container .input-container{
+.form-container .input-container {
     display: flex;
     flex-direction: column;
 }
-.form-container input, .form-container textarea{
+.form-container input,
+.form-container textarea {
     font-size: 1.3rem;
     padding: 0.8 1em;
     width: 100%;
     margin-bottom: 1em;
 }
-.form-container input:focus, .form-container textarea:focus{
+.form-container input:focus,
+.form-container textarea:focus {
     border: 2px solid aqua;
     outline: none;
 }
 
-.form-container form button{
+.form-container form button {
     display: block;
-    padding: .5em 2em;
+    padding: 0.5em 2em;
     margin-top: 1em;
     font-size: 1.3rem;
 }
 
-.error-page{
+.error-page {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-.error-page h1{
+.error-page h1 {
     color: red;
 }
-@media screen and (max-width : 905px) {
-    nav ul{
+@media screen and (max-width: 905px) {
+    nav ul {
         flex-direction: column;
     }
 }
