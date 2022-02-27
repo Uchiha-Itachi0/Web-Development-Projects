@@ -1,0 +1,14 @@
+<%- include('../partial/header'); %>
+    <div class="form-container">
+        <form action="/admin/<% if (editMode){%>edit-product<%} else {%>add-product<%} %>" method="post">
+            <div class="input-container">
+                <label for=""><h3>Title</h3><input type="text" name="title" value="<% if(editMode){ %><%= product.title %><% } %>"/></label>
+                <label for=""><h3>imgURL</h3><input type="text" name="imgUrl" value="<% if(editMode){ %><%= product.imgUrl %><% } %>"/></label>
+                <label for=""><h3>price</h3><input type="text" name="price" value="<% if(editMode){ %><%= product.price %><% } %>"/></label>
+                <label for=""><h3>description</h3><textarea name="description" id="" cols="30" rows="10"><% if(editMode){ %><%= product.description %><% } %></textarea></label>
+            </div>
+            <button type="submit"><% if(editMode){ %> Update <%} else{ %> Add <%} %></button>
+            <input type="hidden" name="prodId" value ="<% if (editMode){%><%= product._id %><%} %>">
+        </form>
+    </div>
+    <%- include('../partial/footer'); %>

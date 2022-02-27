@@ -1,0 +1,34 @@
+<%- include('../partial/header'); %>
+    <section class="header">
+        <% if (products.length> 0) { %>
+            <hr>
+            <div class="products">
+                <% products.map(product=> { %>
+
+                    <div class="product-container">
+                        <h2>
+                            <%= product.products[0].product.title %>
+                        </h2>
+                        <img src="<%= product.products[0].product.imgUrl %> " alt="krishna balram painting">
+                        <h1>price : $<%= product.products[0].product.price %>
+                        </h1>
+                        <p>
+                            <%= product.products[0].product.description %>
+                        </p>
+                        <p>
+                            <%= product.products[0].quantity %>
+                        </p>
+                        <form action="/delete-order-product" method="post">
+                            <button class='button del-button' type="submit">Remove from order</button>
+                            <input type="hidden" name="prodId" id="" value="<%= product._id %>">
+                        </form>
+
+                    </div>
+                    <% }) %>
+            </div>
+
+            <% } else { %>
+                <h1>Nothing to display</h1>
+                <%}%>
+    </section>
+    <%- include('../partial/footer'); %>

@@ -1,0 +1,25 @@
+<%- include('../partial/header'); %>
+    <section class="header">
+        <h1 class="<%= products.length === 0 ? '' : 'hide' %> ">No product to display</h1>
+        <div class="products">
+            <% products.map(({_id, title, imgUrl, price, description})=> { %>
+                <div class="product-container">
+                    <h2>
+                        <%= title %>
+                    </h2>
+                    <img src="<%= imgUrl %> " alt="krishna balram painting">
+                    <h1>price : $<%= price %>
+                    </h1>
+                    <p>
+                        <%= description %>
+                    </p>
+                    <form action="/cart" method="post">
+                        <a href="/product/<%= _id %> " class="btn">Details</a>
+                        <button class="button" type="submit">Add to cart</button>
+                        <input type="hidden" name="product_id", value = "<%= _id %>">
+                    </form>
+                </div>
+                <% }) %>
+        </div>
+    </section>
+    <%- include('../partial/footer'); %>
