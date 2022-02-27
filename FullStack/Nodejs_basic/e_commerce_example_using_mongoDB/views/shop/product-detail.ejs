@@ -12,8 +12,10 @@
                     <%= products.description %>
                 </p>
                 <form action="/cart" method="post">
-                    <button class="button" type="submit">Add to cart</button>
-                    <input type="hidden" name="product_id" , value="<%= products._id %> ">
+                    <% if(isLoggedIn){ %>
+                        <button class="button" type="submit">Add to cart</button>
+                        <% } %>
+                            <input type="hidden" name="product_id" , value="<%= products._id %> ">
                 </form>
             </div>
         </div>

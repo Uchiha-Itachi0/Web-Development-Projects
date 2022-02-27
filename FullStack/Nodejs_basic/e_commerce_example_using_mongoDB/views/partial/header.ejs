@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= pageTitle %> </title>
+    <title>
+        <%= pageTitle %>
+    </title>
     <!-- ----------Style Sheet-------- -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <nav>
         <ul>
-            <a href="/" class="<%= url === '/' ? 'active' : '' %> "><li>Shop</li></a>
-            <a href="/product" class="<%= url === '/product' ? 'active' : '' %> "><li>Product</li></a>
-            <a href="/cart" class="<%= url === '/cart' ? 'active' : '' %> "><li>Cart</li></a>
-            <a href="/order" class="<%= url === '/order' ? 'active' : '' %> "><li>Order</li></a>
-            <a href="/admin/add-product" class="<%= url === '/add-product' ? 'active' : '' %> "><li>Add products</li></a>
-            <a href="/admin/admin-product" class="<%= url === '/admin-product' ? 'active' : '' %> "><li>Admin products</li></a>
+            <a href="/" class="<%= url === '/' ? 'active' : '' %> ">
+                <li>Shop</li>
+            </a>
+            <a href="/product" class="<%= url === '/product' ? 'active' : '' %> ">
+                <li>Product</li>
+            </a>
+            <% if(isLoggedIn){ %>
 
+                <a href="/cart" class="<%= url === '/cart' ? 'active' : '' %> ">
+                    <li>Cart</li>
+                </a>
+                <a href="/order" class="<%= url === '/order' ? 'active' : '' %> ">
+                    <li>Order</li>
+                </a>
+                <a href="/admin/add-product" class="<%= url === '/add-product' ? 'active' : '' %> ">
+                    <li>Add products</li>
+                </a>
+                <a href="/admin/admin-product" class="<%= url === '/admin-product' ? 'active' : '' %> ">
+                    <li>Admin products</li>
+                </a>
+                <% } %>
+                    <% if(!isLoggedIn){ %>
+                        <a href="/login" class="<%= url === '/login' ? 'active' : '' %> ">
+                            <li>Login</li>
+                        </a>
+                        <% } else{%>
+                            <form action="/logout" method="post">
+                                <button type="submit">Logout</button>
+                            </form>
+                            <% } %>
         </ul>
     </nav>
