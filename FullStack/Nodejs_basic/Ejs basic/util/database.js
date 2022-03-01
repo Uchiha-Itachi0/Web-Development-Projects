@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
+const PASS = require('./config')
 
-const sequelize = new Sequelize('node_e_commerce', 'root', 'sushma!', {
+const sequelize = new Sequelize('node_e_commerce', 'root', PASS, {
     dialect: 'mysql',
     host: 'localhost'
 });
