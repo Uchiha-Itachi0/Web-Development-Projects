@@ -8,6 +8,7 @@ const adminRoute = require('./routes/admin');
 const authorizationRoute = require('./routes/authorization');
 const errorController = require('./controls/error');
 const { default: mongoose } = require('mongoose');
+const MONGODB_LINK = require('./config');
 
 const User = require('./model/user');
 
@@ -19,7 +20,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const port = 3000;
-const uri = "mongodb+srv://Anubhav:VKgMhY6ntKxouQFh@cluster0.4msls.mongodb.net/E_Commerce_Practice?retryWrites=true&w=majority";
+const uri = MONGODB_LINK
 
 
 
@@ -48,8 +49,14 @@ app.use(session({
 // Midleware does not execute when the program first runs they are registered in node and funneled
 // through the incomming request.
 app.use((req, res, next) => {
+
+    // After logout the session is destroyed
+    if (!req.session.user) {
+        return next();
+    }
     // To find user of this session
-    User.findById('6211efdade14ff94232ac6d1')
+
+    User.findById(req.session.user._id)
         .then((user) => {
 
             // Registering the mongoose user obj to the req, so that we can use it all over our app
@@ -66,20 +73,6 @@ app.use(errorController)
 
 // Setting the relationship.
 mongoose.connect(uri)
-    .then(result => {
-        return User.findOne()
-
-    })
-    .then(user => {
-        if (!user) {
-            return User.create({
-                name: "Anubhav Shukla",
-                email: "anubhavshukla@gmail.com",
-                cart: { items: [] }
-            })
-        }
-        return user
-    })
     .then(() => {
         app.listen(port, () => {
             console.log(`Server is listening on ${port}`);

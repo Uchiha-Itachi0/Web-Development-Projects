@@ -40,6 +40,9 @@
                         <a href="/login" class="<%= url === '/login' ? 'active' : '' %> ">
                             <li>Login</li>
                         </a>
+                        <a href="/sign-in" class="<%= url === '/sign-in' ? 'active' : '' %> ">
+                            <li>sign in</li>
+                        </a>
                         <% } else{%>
                             <form action="/logout" method="post">
                                 <button type="submit">Logout</button>

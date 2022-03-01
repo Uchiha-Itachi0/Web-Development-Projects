@@ -1,16 +1,22 @@
 <%- include('../partial/header') -%>
     <div class="form-container">
 
-        <form action="/login" method="post">
+        <form action="/sign-in" method="post">
             <div class="input-container">
+                <label for="">
+                    <h3>Full Name</h3><input type="text" name="name" />
+                </label>
                 <label for="">
                     <h3>Email</h3><input type="text" name="email" />
                 </label>
                 <label for="">
                     <h3>Password</h3><input type="text" name="password" />
                 </label>
+                <label for="">
+                    <h3>Confirm Password</h3><input type="text" name="confirmPassword" />
+                </label>
             </div>
-            <button type="submit">Log in</button>
+            <button type="submit">Sign in</button>
         </form>
     </div>
     <%- include('../partial/footer') -%>

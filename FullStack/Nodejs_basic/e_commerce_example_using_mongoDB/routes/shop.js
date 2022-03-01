@@ -1,4 +1,5 @@
 const express = require('express');
+const isAuth = require('../controls/is-auth');
 const path = require('path');
 const shopController = require('../controls/shop')
 
@@ -8,12 +9,12 @@ route.get('/product/:productID', shopController.getProductDetails);
 
 route.get('/', shopController.getIndex);
 
-route.get('/cart', shopController.getCart);
-route.post('/cart', shopController.postProduct);
-route.post('/delete-cart-product', shopController.deleteCartProduct);
-route.get('/order', shopController.getOrder);
-route.post('/order', shopController.postOrder);
-route.post('/delete-order-product', shopController.deleteOrderProduct);
+route.get('/cart', isAuth, shopController.getCart);
+route.post('/cart', isAuth, shopController.postProduct);
+route.post('/delete-cart-product', isAuth, shopController.deleteCartProduct);
+route.get('/order', isAuth, shopController.getOrder);
+route.post('/order', isAuth, shopController.postOrder);
+route.post('/delete-order-product', isAuth, shopController.deleteOrderProduct);
 
 // route.get('/checkout')
 

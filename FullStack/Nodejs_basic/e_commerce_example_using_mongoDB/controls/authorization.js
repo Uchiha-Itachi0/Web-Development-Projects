@@ -1,4 +1,6 @@
+const bcrypt = require('bcryptjs');
 const User = require("../model/user");
+
 
 exports.getLogIn = (req, res, next) => {
     // Render the log in page
@@ -44,21 +46,41 @@ exports.postLogIn = (req, res, next) => {
     // This session is available to user with particular hash value which is stored in the cookie
     // Each user have diff hash value.
 
-    User.findById('6211efdade14ff94232ac6d1')
+
+    // Getting the user from the database
+
+    // 1. First get the data entered by the user
+    const email = req.body.email;
+    const password = req.body.password;
+
+    // 2. Find the user by their email
+    User.findOne({ email: email })
         .then(user => {
-            req.session.isLoggedIn = true;
 
-            // We are storing the user object to the session so that we know this session is for which
-            // user
-            // keep in mind that this session user does not have all the cool features of mongodb.
-            req.session.user = user;
+            // If we get the user
+            if (user) {
+                // Check if the password is correct
+                return bcrypt.compare(password, user.password)
+                    .then(passwordCheck => {
+                        if (passwordCheck) {
+                            req.session.isLoggedIn = true;
 
-            // Redirect should happen once the session logged in is stored
-            req.session.save(err => {
-                console.log(err);
-                res.redirect('/');
-            })
+                            // We are storing the user object to the session so that we know this session is for which
+                            // user
+                            // keep in mind that this session user does not have all the cool features of mongodb.
+                            req.session.user = user;
 
+                            // Redirect should happen once the session logged in is stored
+                            return req.session.save(err => {
+                                console.log(err);
+                                res.redirect('/');
+                            })
+                        }
+                        return res.redirect('/login');
+                    })
+                    .catch(err => console.log("This is the error message",err))
+            }
+            return res.redirect('/login');
         })
         .catch(err => console.log("This is err", err))
 }
@@ -68,4 +90,51 @@ exports.postLogout = (req, res, next) => {
         console.log(err);
         res.redirect('/');
     });
+}
+
+exports.getSignIn = (req, res, next) => {
+    res.render('authorization/sign-in', {
+        url: '/sign-in',
+        pageTitle: 'Sign-In',
+        isLoggedIn: req.session.isLoggedIn
+    })
+}
+
+exports.postSignIn = (req, res, next) => {
+
+    // 1. Get user info typed in the input field
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password;
+    const confirmPassword = req.body.confirmPassword;
+
+    // 2. Store the data in the Database
+    // (i). First check if the user already exists or not
+    User.findOne({ email: email })
+        .then(userDoc => {
+            // If this user is already present in the database
+            if (userDoc) {
+                // alert('This user is already exists');
+                return res.redirect('/sign-in');
+            }
+
+            // We need to encrypt the password
+
+            return bcrypt.hash(password, 12).
+                then(hashPassword => {
+                    // If user does not already exist in the database
+                    const user = new User({
+                        name: name,
+                        email: email,
+                        password: hashPassword,
+                        cart: { items: [] }
+                    })
+                    return user.save()
+                })
+                .then(() => {
+                    res.redirect('/login')
+                })
+                .catch(err => console.log(err))
+        })
+        .catch(err => console.log(err));
 }
