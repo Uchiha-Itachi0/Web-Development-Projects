@@ -5,8 +5,8 @@ import CardGenerator from "./Container/CardGenerator/CardGenerator";
 function App() {
   return (
     <>
-      <GlobalStyle lowerBackgroundColor="#F38E34" HigherBackgroundColor="#FFF"/>
-      <CardGenerator />
+      <GlobalStyle lowerBackgroundColor="#F38E34" HigherBackgroundColor="#FFF" />
+        <CardGenerator />
     </>
 
   );

@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 
 }
 
+
 body{
     display: flex;
     flex-direction: column;
@@ -19,7 +20,11 @@ body{
     background: ${(props) => `linear-gradient(45deg, ${props.lowerBackgroundColor} 50%, ${props.HigherBackgroundColor} 50%)`};
     background-repeat: no-repeat;
     overflow: hidden;
-    height:100vh ;
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
 }
 `;
 

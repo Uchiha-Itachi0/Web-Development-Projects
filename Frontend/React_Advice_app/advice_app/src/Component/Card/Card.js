@@ -9,6 +9,15 @@ import DisplayCard from '../DisplayCard/DisplayCard';
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+
+const CardContainer = styled(motion.div)`
+display: flex;
+flex-direction:column;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+`;
 const CardStyle = styled(motion.div)`
 position: relative;
 width: max(50vw, 350px);
@@ -26,6 +35,10 @@ overflow-x: hidden;
     .parent_container_p{
         font-size: max(2vw, 20px);
     }
+
+@media only screen and (max-width: 360px){
+  width: 80vw;
+}
 `;
 
 
@@ -96,13 +109,13 @@ const Card = (props) => {
 
 
   return (
-    <motion.div variants={CardAnimation} initial="initial" animate="animate">
+    <CardContainer as={motion.div} variants={CardAnimation} initial="initial" animate="animate">
       <CardStyle as={motion.div} initial="rest" animate={clicked ? "hover" : "rest"} onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>
-        <CircleRotation maxSize={10} minSize={200} rotateCircle={rotateCircle} />
+        <CircleRotation maxsize={10} minsize={200} rotateCircle={rotateCircle} />
         <p className='parent_container_p'>Hover or Click</p>
-        <DisplayCard displayCard={displayCard} />
+        <DisplayCard displayCard={displayCard} mainContent={props.mainContent}/>
       </CardStyle>
-    </motion.div>
+    </CardContainer>
   )
 }
 

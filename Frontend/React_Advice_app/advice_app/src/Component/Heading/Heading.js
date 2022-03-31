@@ -7,22 +7,22 @@ position: absolute;
 text-align: center;
 left: 50%;
 transform: translateX(-50%);
-
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+overflow: hidden;
+width: 100%;
+height: 100%;
 `;
 
 const Heading1 = styled(motion.h1)`
-/* position: absolute; */
-font-size: max(10vw, 20px);
+font-size: max(10vw, 70px);
 color: #15212E;
 font-weight: 900;
 `;
 const Heading2 = styled(motion.h1)`
-/* position: absolute;s */
-font-size: max(10vw, 20px);
+font-size: max(10vw, 70px);
 color: #15212E;
 font-weight: 900;
 
@@ -69,8 +69,8 @@ const Heading = () => {
 
     return (
         <Container>
-            <Heading1 as={motion.div} variants={Heading1Animation} initial="initial" animate="animate">Advice</Heading1>
-            <Heading2 as={motion.div} variants={Heading2Animation} initial="initial" animate="animate">App</Heading2>
+            <Heading1 as={motion.h1} variants={Heading1Animation} initial="initial" animate="animate">Advice</Heading1>
+            <Heading2 as={motion.h1} variants={Heading2Animation} initial="initial" animate="animate">App</Heading2>
 
         </Container>
     )
