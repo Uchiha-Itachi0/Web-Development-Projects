@@ -29,7 +29,7 @@ flex-direction:column;
 justify-content: space-evenly;
 align-items: center;
 background: #FFF;
-box-shadow: 0 0 20px 10px rgba(0, 0, 0, .5);
+box-shadow: 0 0 20px 5px rgba(0, 0, 0, .5);
 overflow-x: hidden;
 
     .parent_container_p{
