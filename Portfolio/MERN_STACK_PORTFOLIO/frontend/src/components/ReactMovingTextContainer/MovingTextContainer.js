@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
     animate: {
       x: "-100%",
       transition: {
-        duration: 5,
+        duration: 14,
         repeat: Infinity,
         type: "tween",
         ease: "linear"
@@ -25,11 +25,11 @@ import { motion } from 'framer-motion'
       x: "-100%",
       zIndex: 100,
       transition: {
-        duration: 5,
+        duration: 14,
         repeat: Infinity,
         type: "tween",
         ease: "linear",
-        delay: 2.5
+        delay: 7
       }
     }
   }

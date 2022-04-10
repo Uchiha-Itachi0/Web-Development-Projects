@@ -7,6 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import MovingTextContainer from "../../components/ReactMovingTextContainer/MovingTextContainer"
 import styled from "styled-components";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 const ModifiedMovingTextContainer = styled(MovingTextContainer)`
 
@@ -18,7 +19,7 @@ const Contact = (props) => {
     return (
         <ContactStyle>
             <div className="contact">
-                <h1 className="contact_heading_1">REACH OUT</h1>
+                <SectionHeading isSecondary={false}>REACH OUT</SectionHeading>
                 <a href="mailto:anubhav008shukla@gmail.com" className="contact_mail">anubhav008shukla@gmail.com</a>
                 <div className="contact_social_icon">
                     <a href="https://github.com/Uchiha-Itachi0"><GitHubIcon /></a>
@@ -37,10 +38,10 @@ const Contact = (props) => {
             <div className="contact_moivng_text_footer">
                 <ModifiedMovingTextContainer
                     movingTextText="X Design and Built by Anubhav Shukla X"
-                    minFontSize="2vw"
+                    minFontSize="1vw"
                     maxFontSize="16px"
                     movingTextColor="#324235"
-                    movingTextFontWeight="500"
+                    movingTextFontWeight="900"
                 />
             </div>
         </ContactStyle>

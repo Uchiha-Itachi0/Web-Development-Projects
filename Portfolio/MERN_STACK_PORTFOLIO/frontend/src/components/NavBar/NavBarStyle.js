@@ -11,7 +11,9 @@ padding-top: 2em;
         border-top: 1px solid #FFF6E6;
         border-bottom: 1px solid #FFF6E6;
         width: 100vw;
-        display: block
+        display: block;
+        position: relative;
+        z-index:1;
     }
 
 `;

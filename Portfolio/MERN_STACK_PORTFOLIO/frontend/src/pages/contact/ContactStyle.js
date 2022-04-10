@@ -1,20 +1,14 @@
 import styled from "styled-components";
 const ContactStyle = styled.div`
-margin-top: 10em;
+margin-top: 5em;
     
     .contact{
         padding: 4em 2em;
-        background: #324235;
-        color: #FFF6E6;
-
-
-        .contact_heading_1{
-            font-size: max(6vw, 2rem);
-            margin-bottom: .5em;
-        }
+        background: var(--secondary);
+        color: var(--primary);
 
         a{
-            color: #FFF6E6;
+            color: var(--primary);;
             font-size: max(4vw, 1em);
         }
 
@@ -35,7 +29,7 @@ margin-top: 10em;
             flex-direction: column;
             gap: 1em;        
             a{
-                font-size: max(3vw, 16px);
+                font-size: max(1.5vw, 16px);
             }
         }
 
@@ -46,18 +40,12 @@ margin-top: 10em;
             width: 100vw;
             height: max-content;
             position: relative;
-            padding: 2em 0;
+            padding: 1em 0;
             overflow: hidden;
         }
 
 @media only screen and (max-width: 700px){
-    .contact_heading_1{
-        font-size: 8vw;
-        margin-bottom: .5em;
-    }
-
     a{
-        color: #FFF6E6;
         font-size: 5vw;
     }
 

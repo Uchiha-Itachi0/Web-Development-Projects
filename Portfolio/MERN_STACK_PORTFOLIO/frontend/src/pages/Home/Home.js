@@ -4,7 +4,6 @@ import MyImg from "../../assets/images/myImg.jpg"
 import CircularRotatingImg from '../../components/CircularRotatingImg/CircularRotatingImg'
 import styled from 'styled-components'
 import TwoCircleButton from '../../components/TwoCircleButton/TwoCircleButton'
-import Contact from '../contact/Contact'
 
 const ModifiedCircularRotatingImg = styled(CircularRotatingImg)`
 position: absolute;
@@ -41,7 +40,6 @@ const Home = () => {
         </div>
       </HomeStyle>
       <TwoCircleButton />
-      <Contact />
     </>
 
   )
