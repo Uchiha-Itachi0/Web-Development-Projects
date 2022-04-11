@@ -1,10 +1,10 @@
 import React from 'react'
 import TwoCircleButtonStyle from './TwoCircleButtonStyle'
 
-const TwoCircleButton = () => {
+const TwoCircleButton = (props) => {
   return (
-    <TwoCircleButtonStyle>
-        <a href='mailto:anubhav008shukla@gmail.com' class="hire_me_button">HIRE ME</a>
+    <TwoCircleButtonStyle className={props.className}>
+        <a href={props.link} class="hire_me_button">{props.text}</a>
         <div className="circle_button circle_1"></div>
         <div className="circle_button circle_2"></div>
     </TwoCircleButtonStyle>

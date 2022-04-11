@@ -3,7 +3,7 @@ const ContactStyle = styled.div`
 margin-top: 5em;
     
     .contact{
-        padding: 4em 2em;
+        padding: var(--section-heading-padding);
         background: var(--secondary);
         color: var(--primary);
 

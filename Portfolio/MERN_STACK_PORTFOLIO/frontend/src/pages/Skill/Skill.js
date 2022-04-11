@@ -2,7 +2,7 @@ import React from 'react'
 import SkillStyle from './SkillStyle'
 import SectionHeading from "../../components/SectionHeading/SectionHeading"
 import PercentageDisplayer from '../../components/PercentageDisplayer/PercentageDisplayer'
-
+import { motion } from "framer-motion";
 const skills = [
     {
         title: "01. HTML",
@@ -34,10 +34,41 @@ const skills = [
     }
 ]
 
+const skillAnimate = {
+    initial: {
+        x: "-100vw",
+        opacity: 0,
+        transition: {
+            duration: 1,
+            type: "spring"
+        }
+    },
+    animate: {
+        x: "0",
+        opacity: 1,
+        transition: {
+            duration: 1,
+            type: "spring"
+        }
+    },
+    exit: {
+        x: "100vw",
+        opacity: 0,
+        transition: {
+            duration: 1,
+            type: "spring"
+        }
+    }
+}
+
 const Skill = () => {
     return (
-        <SkillStyle>
-            <SectionHeading isSecondary>Skill</SectionHeading>
+        <SkillStyle as={motion.section} 
+        initial="initial" 
+        animate="animate" 
+        exit="exit"
+        variants={skillAnimate}>
+            <SectionHeading isSecondary>SKILL</SectionHeading>
             <p className="skill_subheading">Click or hover any to know the percentage</p>
             {skills.map((skill, index) => {
                 return <PercentageDisplayer

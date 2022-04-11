@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const AboutStyle = styled.div`
-margin-top: 5em;
-padding: 2em 2em;
+padding: var(--section-heading-padding);
 
     .about_content{
         font-size: max(3vw, 15px);
@@ -45,7 +44,7 @@ padding: 2em 2em;
     }
 
 @media only screen and (max-width: 550px){
-    padding: 2em 1em;
+    padding: var(--section-heading-small-padding);
     .about_content{
         font-size: 6vw;
     }

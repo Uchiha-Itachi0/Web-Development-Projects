@@ -16,6 +16,13 @@ const ModifiedMovingTextContainer = styled(MovingTextContainer)`
 }
 `;
 const Contact = (props) => {
+
+    // When link is clicked go to the top of the page
+    const linkClickHandler = () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0;
+    }
+
     return (
         <ContactStyle>
             <div className="contact">
@@ -28,11 +35,11 @@ const Contact = (props) => {
                     <a href="https://twitter.com/Anubhav08Shukla"><TwitterIcon /></a>
                 </div>
                 <div className="contact_menu_link">
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/interest">Interest</Link>
-                    <Link to="/skill">Skill</Link>
-                    <Link to="/projects">Project</Link>
+                    <Link onClick={linkClickHandler} to="/">Home</Link>
+                    <Link onClick={linkClickHandler} to="/about">About</Link>
+                    <Link onClick={linkClickHandler} to="/interest">Interest</Link>
+                    <Link onClick={linkClickHandler} to="/skill">Skill</Link>
+                    <Link onClick={linkClickHandler} to="/projects">Project</Link>
                 </div>
             </div>
             <div className="contact_moivng_text_footer">

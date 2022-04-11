@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const SkillStyle = styled.section`
-margin-top: 2em;
-padding: 2em;
+padding: var(--section-heading-padding);
 color: var(--secondary);
 
 .skill_subheading{

@@ -5,11 +5,12 @@ width: 100vw;
 /* height: max-content; */
 text-align: center;
 padding-top: 2em;
+margin-top: 5em;
     .nav_item_link{
         font-size: max(5vw, 50px);
-        color: #FFF6E6;
-        border-top: 1px solid #FFF6E6;
-        border-bottom: 1px solid #FFF6E6;
+        color: var(--primary);
+        border-top: 1px solid var(--primary);
+        border-bottom: 1px solid var(--primary);
         width: 100vw;
         display: block;
         position: relative;

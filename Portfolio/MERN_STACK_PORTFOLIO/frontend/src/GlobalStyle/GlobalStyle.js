@@ -17,13 +17,16 @@ const GlobalStyles = createGlobalStyle`
     --white : white;
     --black: black;
     --body-bg: #54436B;
-    --light-green: #50CB93
+    --light-green: #50CB93;
+    --section-heading-padding: 4em 2em;
+    --section-heading-small-padding: 2em 1em;
   }
   html{
     ${'' /* font-size: 10px; */}
     font-family: 'Roboto Mono';
     background-color: var(--primary);
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
   body{
     overflow-x: hidden;

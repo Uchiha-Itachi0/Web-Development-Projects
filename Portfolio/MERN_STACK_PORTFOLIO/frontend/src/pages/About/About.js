@@ -1,10 +1,42 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import SectionHeading from '../../components/SectionHeading/SectionHeading'
 import AboutStyle from './AboutStyle'
 
+
+const aboutAnimate = {
+    initial: {
+        x: "-100vw",
+        opacity: 0,
+        transition: {
+            duration: 1,
+            type: "spring"
+        }
+    },
+    animate: {
+        x: "0",
+        opacity: 1,
+        transition: {
+            duration: 1,
+            type: "spring"
+        }
+    },
+    exit: {
+        x: "100vw",
+        opacity: 0,
+        transition: {
+            duration: 1,
+            type: "spring"
+        }
+    }
+}
 const About = () => {
     return (
-        <AboutStyle>
+        <AboutStyle as={motion.div} 
+        animate="animate" 
+        initial="initial"
+        exit="exit"
+        variants={aboutAnimate}>
             <SectionHeading isSecondary>ABOUT</SectionHeading>
             <p className="about_content">
                 I’m an Open-Source enthusiast & a junior pursuing my Bachelors
